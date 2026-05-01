@@ -11,6 +11,8 @@ import { getNextFieldState } from './GameLogic.ts';
 
 export default function GamePage() {
     const size = 50;
+    const minSimulationDelay = 10;
+    const maxSimulationDelay = 500;
     const { isSimulationRunning, setIsSimulationRunning } = useOutletContext<AppOutletContext>();
     const createEmptyField = () =>
         Array.from({ length: size }, () =>
@@ -20,6 +22,7 @@ export default function GamePage() {
     const [gameField, setGameField] = useState<boolean[][]>(
         createEmptyField()
     );
+    const sliderValue = maxSimulationDelay + minSimulationDelay - simulationDelay;
 
     const handleCellClick = (row: number, col: number) => {
         if (isSimulationRunning) {
@@ -86,15 +89,17 @@ export default function GamePage() {
                     </Button>
                     <Stack spacing={0.75}>
                         <Typography variant="caption" sx={{ color: 'var(--color-slate-800)' }}>
-                            Speed: {simulationDelay} ms
+                            Speed
                         </Typography>
                         <Slider
                             size="small"
-                            min={50}
-                            max={1000}
+                            min={minSimulationDelay}
+                            max={maxSimulationDelay}
                             step={50}
-                            value={simulationDelay}
-                            onChange={(_, value) => setSimulationDelay(value as number)}
+                            value={sliderValue}
+                            onChange={(_, value) =>
+                                setSimulationDelay(maxSimulationDelay + minSimulationDelay - (value as number))
+                            }
                             aria-label="Simulation speed"
                         />
                     </Stack>

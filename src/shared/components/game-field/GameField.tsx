@@ -124,11 +124,13 @@ export function GameField({ field, onCellClick }: GameFieldProps) {
     context.fillStyle = gridColor;
 
     for (let col = 0; col <= cols; col += 1) {
-      context.fillRect(col * cellSize, 0, 1, height);
+      const x = Math.min(col * cellSize, width - 1);
+      context.fillRect(x, 0, 1, height);
     }
 
     for (let row = 0; row <= rows; row += 1) {
-      context.fillRect(0, row * cellSize, width, 1);
+      const y = Math.min(row * cellSize, height - 1);
+      context.fillRect(0, y, width, 1);
     }
   }, [
     aliveCellColor,

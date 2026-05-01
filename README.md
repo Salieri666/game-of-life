@@ -2,6 +2,8 @@
 
 This project is a simple implementation of Conway's Game of Life built with React and TypeScript.
 
+![Screenshot](screen.png)
+
 The app lets you:
 - create an initial pattern on the field
 - start and stop the simulation
@@ -42,3 +44,5 @@ Run linter:
 ```bash
 npm run lint
 ```
+
+

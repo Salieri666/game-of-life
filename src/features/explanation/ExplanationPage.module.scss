@@ -1,3 +1,31 @@
 .ExplanationPage {
+  display: grid;
+  gap: 20px;
+}
 
+.ruleGroup {
+  display: grid;
+  gap: 10px;
+}
+
+.ruleTitle {
+  margin: 0;
+  font-weight: 600;
+}
+
+.ruleItem {
+  position: relative;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.ruleItem::before {
+  content: '';
+  position: absolute;
+  top: 0.6em;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
 }

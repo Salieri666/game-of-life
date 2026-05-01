@@ -1,4 +1,4 @@
-import CycloneIcon from '@mui/icons-material/Cyclone';
+import GamepadRoundedIcon from '@mui/icons-material/GamepadRounded';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
@@ -19,7 +19,7 @@ const Header = ({ isSimulationRunning }: HeaderProps) => {
       elevation={0}
       className={styles.header}
       sx={{
-        background: 'var(--color-slate-900)',
+        background: 'var(--color-cyan-900)',
         borderBottom: '1px solid var(--color-border-muted)',
       }}
     >
@@ -42,10 +42,9 @@ const Header = ({ isSimulationRunning }: HeaderProps) => {
               placeItems: 'center',
               background: 'var(--color-green-500)',
               color: 'var(--color-white)',
-              boxShadow: '0 10px 30px var(--color-shadow-cyan)',
             }}
           >
-            <CycloneIcon />
+            <GamepadRoundedIcon />
           </Box>
           <Box>
             <Typography variant="h5" fontWeight={800} letterSpacing={0.2}>

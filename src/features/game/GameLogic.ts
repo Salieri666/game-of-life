@@ -6,6 +6,7 @@ export function getNextFieldState(field: boolean[][]): boolean[][] {
   }
 
   const cols = field[0].length;
+  const getWrappedIndex = (index: number, size: number) => (index + size) % size;
 
   const countAliveNeighbors = (row: number, col: number) => {
     let aliveNeighbors = 0;
@@ -16,12 +17,8 @@ export function getNextFieldState(field: boolean[][]): boolean[][] {
           continue;
         }
 
-        const nextRow = row + rowOffset;
-        const nextCol = col + colOffset;
-
-        if (nextRow < 0 || nextRow >= rows || nextCol < 0 || nextCol >= cols) {
-          continue;
-        }
+        const nextRow = getWrappedIndex(row + rowOffset, rows);
+        const nextCol = getWrappedIndex(col + colOffset, cols);
 
         if (field[nextRow][nextCol]) {
           aliveNeighbors += 1;

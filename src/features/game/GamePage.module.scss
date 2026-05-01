@@ -1,0 +1,42 @@
+.GamePage {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top, rgba(6, 182, 212, 0.08), transparent 40%),
+    linear-gradient(180deg, var(--color-slate-50) 0%, var(--color-slate-100) 100%);
+}
+
+.gameLayout {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  flex: 0 0 auto;
+  width: 180px;
+}
+
+@media (max-width: 900px) {
+  .gameLayout {
+    flex-direction: column;
+  }
+
+  .controls {
+    width: 100%;
+    max-width: 320px;
+  }
+}

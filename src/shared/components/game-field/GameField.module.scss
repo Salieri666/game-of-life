@@ -1,0 +1,18 @@
+.gameField {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.canvas {
+  display: block;
+  flex: 0 0 auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
